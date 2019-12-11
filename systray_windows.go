@@ -67,10 +67,10 @@ func nativeLoop(title string, width int, height int) {
 }
 
 func quit() {
-	atomic.StoreInt32(&okayToClose, 1)
-	mainWindow.Close()
 	notifyIcon.Dispose()
 	systrayExit()
+	atomic.StoreInt32(&okayToClose, 1)
+	mainWindow.Close()
 }
 
 // SetIcon sets the systray icon.
